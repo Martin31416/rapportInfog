@@ -20,5 +20,45 @@
 
 \subsection{Particules}
 
+Pour respecter ce critère fonctionnel, l'application doit rendre un nuage de points en une seule commande d'affichage.
+
+Dans l'application Paint3D+,  il y a un bouton nommé ''Cloud Points'' qui permet de transformer un objet 3D sélectionné en  un nuage de points où chaque point est un sommet d'unedes faces qui compose l'objet en 3D.
+
+Donc, pour pouvoir utiliser cette option, il faut créer un objet 3D avec le bouton ''Cube'' ou ''Sphere'' en mode 3D, sélectionner un des objets 3D créé avec le bouton ''Select next 3D Shape'' et appuyer sur le bouton ''Cloud Points'' pour rendre l'objet 3D sélectionné en tant que nuage de points.
+
+Les 2 figures suivantes montrent une sphère rendue sans nuage de points et une sphère rendue avec un nuage de points.
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/cloudpoints1.png}
+\end{center}
+\caption{Une sphère rendue sans nuage de points.}
+\end{figure}
+ 
+ 
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/cloudpoints2.png}
+\end{center}
+\caption{Une sphère rendue avec un nuage de points.}
+\end{figure}
+
+\newpage
+
+\subsection{Primitives 3D}
+
+L'application doit permettre de créer au moins 2 types de primitives géométriques 3D à partir d'un algorithme sans aucune données externes à l'application.
+
+L'application Paint3D+ permet de créer 2 primitives 3D localement sans données externes, soit le cube et la sphère. Ces 2 primitives 3D sont créées par composition à partir de 2 classes d'OpenFrameworks, soit OfSpherePrimitive et OfxBoxPrimitive. 
+
+Pour créer ces 2 primitives 3D, il faut d'abord sélectionner le mode 3D dans le menu. Ensuite, il faut cocher soit Cube ou Sphere, selon la primitive 3D à créer et cliquer gauche sur la souris à l'endroit où l'on veut que la primitive 3D apparaisse. Ensuite, pour modifier une primitive 3D créée, il faut la sélectionner avec l'option ''Select next 3D shape'' et modifier les paramètres modifiables, soit la position en x,y,z l'orientation en x,y,z ou la couleur de sélection ou de remplissage. 
+
+Il est à noter que la rotation est faite à partir de quaternions dans le code.
+
 
 \section{Illumination}
+
+gggg
+gggg
+gggg
+gg
