@@ -62,6 +62,10 @@ Les figures suivantes demontrent cette fonctionnalitée.
 
 
 
+\section{Géométrie}
+
+
+
 \subsection{Particules}
 
 Pour respecter ce critère fonctionnel, l'application doit rendre un nuage de points en une seule commande d'affichage.
@@ -71,6 +75,8 @@ Dans l'application Paint3D+,  il y a un bouton nommé ''Cloud Points'' qui permet
 Donc, pour pouvoir utiliser cette option, il faut créer un objet 3D avec le bouton ''Cube'' ou ''Sphere'' en mode 3D, sélectionner un des objets 3D créé avec le bouton ''Select next 3D Shape'' et appuyer sur le bouton ''Cloud Points'' pour rendre l'objet 3D sélectionné en tant que nuage de points.
 
 Les 2 figures suivantes montrent une sphère rendue sans nuage de points et une sphère rendue avec un nuage de points.
+
+\newpage
 
 \begin{figure}[h] 
 \begin{center}
@@ -92,14 +98,20 @@ Les 2 figures suivantes montrent une sphère rendue sans nuage de points et une s
 \subsection{Primitives 3D}
 
 L'application doit permettre de créer au moins 2 types de primitives géométriques 3D à partir d'un algorithme sans aucune données externes à l'application.
+\\
 
 L'application Paint3D+ permet de créer 2 primitives 3D localement sans données externes, soit le cube et la sphère. Ces 2 primitives 3D sont créées par composition à partir de 2 classes d'OpenFrameworks, soit OfSpherePrimitive et OfxBoxPrimitive. 
+\\
 
-Pour créer ces 2 primitives 3D, il faut d'abord sélectionner le mode 3D dans le menu. Ensuite, il faut cocher soit Cube ou Sphere, selon la primitive 3D à créer et cliquer gauche sur la souris à l'endroit où l'on veut que la primitive 3D apparaisse. Ensuite, pour modifier une primitive 3D créée, il faut la sélectionner avec l'option ''Select next 3D shape'' et modifier les paramètres modifiables, soit la position en x,y,z l'orientation en x,y,z ou la couleur de sélection ou de remplissage. 
+Pour créer ces 2 primitives 3D, il faut d'abord sélectionner le mode 3D dans le menu. Ensuite, il faut cocher soit Cube ou Sphere, selon la primitive 3D à créer et cliquer gauche sur la souris à l'endroit où l'on veut que la primitive 3D apparaisse. Une fois crée, chaque primitive 3D a une profondeur par défaut de 30 unités. Cela permet de mettre en valeur l'effet de perspective et bien montrer qu'il s'agit d'un objet en 3D. Ensuite, pour modifier une primitive 3D créée, il faut la sélectionner avec l'option ''Select next 3D shape'' et modifier les paramètres modifiables, soit la position en x,y,z l'orientation en x,y,z ou la couleur de sélection ou de remplissage. De plus, lorsqu'une primitive 3D est sélectionnée, il est possible de l'effacer en appuyant sur la touche ''delete''. 
+\\
 
 Il est à noter que la rotation est faite à partir de quaternions dans le code.
+\\
 
 Les 2 figures suivantes montrent les 2 primitives 3D que l'application peut créer sans données externes.
+
+\newpage
 
 \begin{figure}[h] 
 \begin{center}
@@ -145,5 +157,8 @@ Le rendu des entités visuelles est fait à partir d'un modèle d'illumination qui 
 \\
 
 Dans l'application Paint 3D+, bla
+
+
+
 
 
