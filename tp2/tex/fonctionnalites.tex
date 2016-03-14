@@ -56,7 +56,43 @@ Les figures suivantes demontrent cette fonctionnalitée.
 
 \section{Transformation}
 
+\subsection{Structure de la scène}
 
+Toutes les entités géométriques présentes dans une scène sont organisées dans une ou des structures de données qui permettent de gérer les transformations et le rendu graphique de chaque élément.
+
+Pour le mode 3D de l'application, il est possible de sélectionner chaque Primitive 3D en appuyant sur le bouton ''Select next 3d shape''. Une fois sélectionnée, il est possible de sa couleur de remplissage, sa position en x, y, z, son orientation en x, y, z, de la supprimer et de la transformer en nuage de points.
+
+Cela est possible grâce à une structure vector<Obj3D*> qui contient toutes les classes dérivées de Obj3D comme le cube ou la sphère. Voici un exemple de code le montrant:
+
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=16cm, height=7cm]{fig/transformations3d1.png}
+\end{center}
+\caption{Structure de données stockant les entités 3D.}
+\end{figure}
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=16cm, height=7cm]{fig/transformations3d2.png}
+\end{center}
+\caption{Méthode montrant comment on stock une nouvelle entité 3D dans vector<Obj3D*>.}
+\end{figure}
+
+\newpage 
+
+\subsection{Transformation interractive}
+
+Il est possible de modifier interractivement la translation, la rotation et le redimensionnement de tous les objets présents dans la scène.
+
+En mode 3D, il est possible de changer la position x, y, z, l'orientation en x, y, z et le redimensionnement grâce aux paramètres glissant de la fenêtres ''3D Settings''.
+
+Voici le images le montrant:
+
+\subsection{Sélection multiple}
+
+Il est possible de sélectionner une ou des instances d'entités visuelles présentes dans la scène et de modifier les attributs qu'elles ont en commun même si ellessont de différents types.
 
 \section{Géométrie}
 
