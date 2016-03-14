@@ -55,7 +55,31 @@ Les figures suivantes demontrent cette fonctionnalitée.
 \section{Dessin vectoriel}
 
 \section{Transformation}
+\subsection{Structure de scène}
 
+Dans notre application, la structuration des entités géométriques est faite sous forme de vecteurs (un vecteur pour le 2D et un pour le 3D). La recherche d'une entitée particulière est donc faite en parcourant les vecteurs au complet.
+
+\subsection{Transformation interactive}
+
+Pour les transformations 2D, le code de ceux-ci à été fait au complet. L'utilisation des fonctions prédéfinie de openframeworks est seulement présente pour les images importées. Dans les autres cas, soit des paramètres de taille sont changés (width, height et radius) ou soit les coordonnées des coins et/ou du point milieu. Les transformations de redimensionnement et de rotation sont faites par rapport au point milieu de la structure (moyenne des coins/points critiques). Pour ce qui est des objets 3D, la translation est faite par position de openframeworks et l'orientation par quaternion, une fonctionnalité de openframeworks.
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/transformations.png}
+\end{center}
+\caption{Translation, rotation et redimensionnement d'un rectangle.}
+\end{figure}
+
+\subsection{Sélection multiple}
+
+Il est possible de sélectionner plusieurs entitées visuelles dans l'application Paint3D+. Un coup selectionnées, ces entitées peuvent changer leurs attributs en commun ou être rassemblées pour créer un nouvel object appelé Obj2DCollection. Cette collection emmagasine les structures selectionnées dans un nouveau vecteur.
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/selection.png}
+\end{center}
+\caption{Objet original, modifications à l'aide d'une sélection multiple et modifications après un collage en Obj2DCollection.}
+\end{figure}
 
 
 \section{Géométrie}
