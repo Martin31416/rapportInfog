@@ -6,4 +6,44 @@
 
 \chapter{Architecture}
 
-Test
+Paint3D+ est organisée en plusieurs classes qui supportent ces fonctionnalités. La structure 
+hiérarchique permet de minimaliser le volume du code nécessaire et de faciliter l'implémentation de plusieurs fonctions (comme les transformations interactives, la sélection multiple, etc.). Comme le programme fonctionne en 3 mods différents, on peut grouper les classes en 3 parties respectivement: les classes qui supportent le mode 2D, le mode 3D et la partie du rendu qui est construite autour de la casse ''OfApp'' (fournie initialement par Openframworks).
+\\
+
+La vue d'ensemble est représentée dans la figure suivante:
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=15cm, height=10cm]{fig/uml1.jpg}
+\end{center}
+\caption{Diagramme UML vue d'ensemble.}
+\end{figure}
+
+Les détails pertinents de chaque classe sont présents dans les diagrammes suivants:
+
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=15cm, height=10cm]{fig/uml2.jpg}
+\end{center}
+\caption{Diagramme UML de ofApp.}
+\end{figure}
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=15cm, height=10cm]{fig/uml3.jpg}
+\end{center}
+\caption{Diagramme UML du 2D.}
+\end{figure}
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=15cm, height=10cm]{fig/uml4.jpg}
+\end{center}
+\caption{Diagramme UML du 3D.}
+\end{figure}
+
+\newpage 
+
+Il faut tenir compte que le rôle de ces diagrammes est de montrer l'architecteur de l'application et la logique de fonctionnement (par exemple les méthodes ''set'' et "get')' ont été omises pour simplifier la complexité des diagrammes. Pour plus de détails, il faut consulter leur implémentation (le code dans les fichier .h et .cpp respectivement).
