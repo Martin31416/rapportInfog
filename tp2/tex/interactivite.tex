@@ -6,10 +6,138 @@
 
 \chapter{Interactivité}
 
-\section{Aperçu de l'interface graphique}
+\section{Aperçus de l'interface graphique}
+
+Voici quelques aperçus de l'interface graphique aux figures \ref{fig:f_gui}, \ref{fig:f_gui2d}, \ref{fig:f_gui3d}, \ref{fig:f_guiModel}.
+
+\begin{figure}[hb]
+ \centering
+ \includegraphics[scale=0.7]{fig/GUI_opening.png}
+	\caption{Interface graphique à l'ouverture}
+ \label{fig:f_gui}
+\end{figure}
+
+Voici un aperçu de l'interface graphique lors de l'ajout de formes 2D.
+
+\begin{figure}[hb]
+ \centering
+ \includegraphics[scale=0.7]{fig/GUI_shapes2D.png}
+	\caption{Interface graphique en mode 2D}
+ \label{fig:f_gui2d}
+\end{figure}
+
+\begin{figure}[hb]
+ \centering
+ \includegraphics[scale=0.7]{fig/GUI_shape3D.png}
+	\caption{Interface graphique en mode 3D}
+ \label{fig:f_gui3d}
+\end{figure}
+
+\begin{figure}[hb]
+ \centering
+ \includegraphics[scale=0.7]{fig/GUI_model.png}
+	\caption{Interface graphique en mode modèle}
+ \label{fig:f_guiModel}
+\end{figure}
+
+\section{Détails de l'interface graphique}
+L'interface graphique permet de choisir une scène de rendu 2D, 3D ou de modèle selon le choix de l'utilisateur. De plus, il est possible d'importer des images en mode 2D et d'exporter la scène sous forme d'image de format png à l'aide d'un dialogue de d'importation ou d'exporation. Le dernier item de la section Menu permet la sélection des différents objets de la scène 2D.
+
+\bigskip
+\begin{itemize}
+\item \textbf{2D} : Permet l'édition d'une scène de rendu 2D.
+\item \textbf{3D} : Permet l'édition d'une scène de rendu 3D.
+\item \textbf{Model Mode} : Permet l'importation d'un modèle 3D.
+\item \textbf{Import} : Permet l'importation d'une image dans la scène.
+\item \textbf{Export} : Permet l'expotation de la scène de rendu, sans les différents menus, sous forme d'une image de format png.
+\item \textbf{Selection} : Permet la sélection d'un ou de plusieurs objets 2D.
+\end{itemize}
+
+\subsection{2D Shapes}
+
+Il est possible de dessiner quatre sortes de primitives vectorielles, en plus d'offrir la possibilité de fusioner ces primitives, une fois qu'elles sont créées, ou de les défusioner avec les boutons Merge Shapes et Unmerge Shapes.
+
+Dans le cas de la ligne, du rectangle et du cercle, l'utilisateur clique en un premier point et se déplace dans l'écran afin de cliquer une seconde fois et former la primitive.
+
+Pour ce qui est du triangle, l'utilisateur doit cliquer en trois points différents.
+
+\bigskip
+\begin{itemize}
+\item \textbf{Line} : Permet la création d'une ligne.
+\item \textbf{Triangle} : Permet la création d'un triangle.
+\item \textbf{Rectangle} : Permet la création d'un rectangle.
+\item \textbf{Circle} : Permet la création d'un cercle.
+\item \textbf{Merge Shapes} : Permet la création d'un objet 2D regroupant les formes sélectionées.
+\item \textbf{Unmerge Shapes} : Permet de détruire l'objet 2D issu d'une fusion de formes. Les primitives vectorielles peuvent donc être manipulées individuellement.
+\end{itemize}
+
+\subsection{2D}
+
+Cette section de l'interface graphique regroupe les options de lignes de contour et de remplissage.
+
+\bigskip
+\begin{itemize}
+\item \textbf{Stroke Width} : Permet l'ajustement de la largeur de la ligne de contour entre 1 et 10.
+\item \textbf{Stroke Color} : Permet l'ajustement de la couleur de la ligne de contour sous forme RGBA.
+\item \textbf{Fill Color} : Permet l'ajustement de la couleur de remplissage sous forme RGBA.
+\item \textbf{Selection Color} : Permet l'ajustement de la couleur de sélection sous forme RGBA. Cette couleur permet de déterminer quel ou quels objets 2D sont sélectionnés en modifiant la couleur de la ligne de contour lors d'une sélection.
+\end{itemize}
+
+\subsection{3D Shapes}
+
+Cette section de l'interface graphique permet de faire l'ajout de formes 3D lorsque le mode 3D est activé.
+
+\bigskip
+\begin{itemize}
+\item \textbf{Cube} : Permet d'ajouter un cube.
+\item \textbf{Sphere} : Permet d'ajouter une sphère.
+\item \textbf{Select next 3D shape} : Permet de parcourir et sélectionner les formes 3D une à une.
+\item \textbf{Unselect} : Permet de désélectionner une objet 3D.
+\end{itemize}
+
+\subsection{3D}
+
+Cette section de l'interface graphique permet de faire l'ajout de formes 3D lorsque le mode 3D est activé.
+
+\bigskip
+\begin{itemize}
+\item \textbf{Cloud points} : Permet d'ajouter un cube.
+\item \textbf{Position x/y/z} : Permet de changer la position de l'objet 3D selon l'axe désiré.
+\item \textbf{Rotate x/y/z} : Permet d'effectuer une rotation de l'objet 3D autour de l'axe désiré.
+\end{itemize}
+
+\section{Utilisation de la souris et racourcis clavier}
+
+Lorsque l'utilisateur sélectionne l'une ou l'autre des primitives verctorielles, le curseur change de forme afin de permettre à ce dernier de visualiser dans quel mode il se situe. Pour la sélection il s'agit d'un curseur normal, tandis que pour les différentes formes, le curseur prend l'apparence de la forme sélectionnée. Lorsque la souris se retrouve au dessus des différents panneaux de configuration le curseur reprend sa forme normale.
+
+Voici les différentes fonctions de la souris selon les modes.
+
+\subsection{2D}
+
+\begin{itemize}
+\item \textbf{Clic gauche} : Permet la sélection d'un objet 2D.
+\item \textbf{Clic gauche et déplacement} : Permet la sélection d'objets dont au moins un coin touche à la zone de sélection tracée.
+\item \textbf{Clic droit et ctrl} : Permet la sélection multiple.
+\item \textbf{Clic droit et déplacement} : Permet le déplacement d'un ou de plusieurs objet 2D.
+\item \textbf{Clic droit et gauche} : Permet la rotation d'un ou de plusieurs objets 2D.
+\item \textbf{Clic gauche et déplacement} : Permet d'ajuster la taille d'un ou de plusieurs objets 2D.
+\item \textbf{Touche supprimer} : Permet de supprimer un objet 2D.
+\end{itemize}
 
 
+\subsection{3D}
 
-\section{Utilisation de la souris}
+\begin{itemize}
+\item \textbf{Touche supprimer} : Permet la suppression de l'objet sélectionné.
+\end{itemize}
 
-\section{Utilisation des touches du clavier}
+\subsection{Model Mode}
+
+Lorsqu'on entre en mode modèle l'interface graphique change quelque peu afin d'afficher les raccourcis clavier à l'écran.
+
+\begin{itemize}
+\item \textbf{Clic gauche et déplacement} : Permet une rotation du modèle.
+\item \textbf{Touche l} : Permet d'appliquer ou non une lumière.
+\item \textbf{Touche m} : Permet d'appliquer ou non un matériau.
+\item \textbf{Touche t} : Permet d'appliquer ou non une texture.
+\end{itemize}
