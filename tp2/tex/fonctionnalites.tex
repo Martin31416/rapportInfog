@@ -9,7 +9,7 @@
 \section{Image}
 \subsection{Importation}
 
-Pour satisfaire ce critère, l'application doit pouvoir importer des fichiers images (.jpg, .png, etc.) pour les utiliser à des fins de rendu graphique. 
+Pour satisfaire ce critère, l'application doit pouvoir importer des fichiers images (.jpg, .png, etc.) pour les utiliser à des fins de rendu graphique.  
 
 L'application permet cette fonctionnalitée grâce à l'utilisation du bouton "Import". Celui-ci ouvre un navigateur de fichier qui permet à l'utilisateur de selectionner facilement le fichier image voulu. Cette image est placée dans le renderer 2D, initialement avec sa taille d'origine et à la position (0,0).
 
@@ -29,12 +29,22 @@ Les figures suivantes demontrent cette fonctionnalitée.
 \caption{Une image importée dans le renderer 2D.}
 \end{figure}
 
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/importCode.png}
+\end{center}
+\caption{Code important de la fonctionnalitée Import.}
+\end{figure}
 
 \subsection{Exportation}
 
 Pour satisfaire ce critère, l'application doit pouvoir exporter des fichiers images (dans notre cas une image .png) et de la sauvegarder sur l'ordinateur utilisé.
 
 L'application permet cette fonctionnalitée grâce à l'utilisation du bouton "Export". Celui-ci ouvre un navigateur de fichier qui permet à l'utilisateur de choisir facilement l'emplacement de sauvegarde ainsi que le nom du fichier sauvegardé. Cette image est celle rendue sur le renderer 2D.
+
+Les figures suivantes demontrent cette fonctionnalitée.
+
+endue sur le renderer 2D.
 
 Les figures suivantes demontrent cette fonctionnalitée.
 
@@ -52,6 +62,13 @@ Les figures suivantes demontrent cette fonctionnalitée.
 \caption{Une image exportée à partir de l'application Paint3D+.}
 \end{figure}
 
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/exportCode.png}
+\end{center}
+\caption{Code important de la fonctionnalitée Export.}
+\end{figure}
+
 \section{Dessin vectoriel}
 \subsection{Curseur dynamique}
 L'application permet un affichage dynamique du curseur de façon à ce que l'utilisateur obtienne une rétroaction visuelle lors de ses actions. 
@@ -61,6 +78,15 @@ L'application permet un affichage dynamique du curseur de façon à ce que l'utili
 \subsection{Structure de la scène}
 
 Toutes les entités géométriques présentes dans une scène sont organisées dans une ou des structures de données qui permettent de gérer les transformations et le rendu graphique de chaque élément.
+
+Dans notre application, la structuration des entités géométriques est faite sous forme de vecteurs (un vecteur pour le 2D et un pour le 3D). La recherche d'une entitée particulière est donc faite en parcourant les vecteurs au complet.
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/structureCode.png}
+\end{center}
+\caption{Code important de la fonctionnalitée Structure de scène.}
+\end{figure}
 
 Pour le mode 3D de l'application, il est possible de sélectionner chaque Primitive 3D en appuyant sur le bouton ''Select next 3d shape''. Une fois sélectionnée, il est possible de sa couleur de remplissage, sa position en x, y, z, son orientation en x, y, z, de la supprimer et de la transformer en nuage de points.
 
@@ -87,6 +113,43 @@ Cela est possible grâce à une structure vector<Obj3D*> qui contient toutes les c
 \subsection{Transformation interractive}
 
 Il est possible de modifier interractivement la translation, la rotation et le redimensionnement de tous les objets présents dans la scène.
+
+Pour les transformations 2D, le code de ceux-ci à été fait au complet. L'utilisation des fonctions prédéfinie de openframeworks est seulement présente pour les images importées. Dans les autres cas, soit des paramètres de taille sont changés (width, height et radius) ou soit les coordonnées des coins et/ou du point milieu. Les transformations de redimensionnement et de rotation sont faites par rapport au point milieu de la structure (moyenne des coins/points critiques). Pour ce qui est des objets 3D, la translation est faite par position de openframeworks et l'orientation par quaternion, une fonctionnalité de openframeworks.
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/transformations.png}
+\end{center}
+\caption{Translation, rotation et redimensionnement d'un rectangle.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/transformationCode1.png}
+\end{center}
+\caption{Code important des fonctionnalitées de transformation.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/resizeCode.png}
+\end{center}
+\caption{Code important de la fonctionnalité de redimensionnement.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/translateCode.png}
+\end{center}
+\caption{Code important de la fonctionnalité de translation.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/rotateCode.png}
+\end{center}
+\caption{Code important de la fonctionnalité de rotation.}
+\end{figure}
 
 En mode 3D, il est possible de changer la position x, y, z, l'orientation en x, y, z et le redimensionnement grâce aux paramètres glissant de la fenêtres ''3D Settings''.
 
@@ -123,7 +186,35 @@ Voici le images le montrant:
 
 \subsection{Sélection multiple}
 
-Il est possible de sélectionner une ou des instances d'entités visuelles présentes dans la scène et de modifier les attributs qu'elles ont en commun même si ellessont de différents types.
+Il est possible de sélectionner une ou des instances d'entités visuelles présentes dans la scène et de modifier les attributs qu'elles ont en commun même si elles sont de différents types. Ces entités peuuvent même être rassemblées pour créer un nouvel object appelé Obj2DCollection. Cette collection emmagasine les structures selectionnées dans un nouveau vecteur.
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/selection.png}
+\end{center}
+\caption{Objet original, modifications à l'aide d'une sélection multiple et modifications après un collage en Obj2DCollection.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/containedCode.png}
+\end{center}
+\caption{Code important de la fonctionnalité de selection multiple.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/selectMultipleCode1.png}
+\end{center}
+\caption{Code important de la fonctionnalité de selection multiple.}
+\end{figure}
+
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/selectMultipleCode2.png}
+\end{center}
+\caption{Code important de la fonctionnalité de selection multiple.}
+\end{figure}
 
 \section{Géométrie}
 
