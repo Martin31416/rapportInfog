@@ -71,7 +71,45 @@ Les figures suivantes demontrent cette fonctionnalitée.
 
 \section{Dessin vectoriel}
 \subsection{Curseur dynamique}
-L'application permet un affichage dynamique du curseur de façon à ce que l'utilisateur obtienne une rétroaction visuelle lors de ses actions. 
+L'application permet un affichage dynamique du curseur de façon à ce que l'utilisateur obtienne une rétroaction visuelle lors de ses actions. Le curseur est représenté différemment que ce soit pour chacune des formes 2D que l'utilisateur ajoute ou pour l'ensemble des opérations de transformation. De plus, le curseur redevient normal lorsque situé au dessus des panneaux de configuration de l'interface graphique. Pour ce faire, la fonction dessinant le curseur vérifie quel mode de dessin est sélectionné ou quelle action est effectuée.
+
+Les figures ci-dessous démontrent la présence de la fonctionnalité.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.7]{fig/Cursors.png}
+	\caption{Curseur dynamique - Ligne, triangle, rectangle et cercle}
+ \label{fig:f_cursor1}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.7]{fig/Cursors2.png}
+	\caption{Curseur dynamique - Translation, redimensionnement et rotation}
+ \label{fig:f_cursor2}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.7]{fig/drawCursor.png}
+	\caption{Exemple de code pour la fonctionnalité}
+ \label{fig:f_cursorCode}
+\end{figure}
+
+\subsection{Formes vectorielles}
+L’application Paint3D+ permet de créer des quatre instances de formes, soit des lignes, des triangles, des rectangles ou bien des cercles. Les paramètres sont établis par l'utilisateur et envoyés à l'application qui appel au final les méthodes de base de OpenFrameworks. De plus, il est possible de créer un ensemble de plusieurs primitives vectorielles en sélectionnant les primitives désirées et en appuyant sur le bouton Merge Shapes. La manière de procéder consiste à regrouper les différentes formes sélectionnées dans un vecteur et créer un nouvel objet.
+
+La figure ci-dessous démontre le code afin de dessiner un objet 2D regroupant plusieurs primitives.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.7]{fig/drawCollection.png}
+	\caption{Exemple de code pour le dessin de collection d'objets}
+ \label{fig:f_collectionCode}
+\end{figure}
+
+\subsection{Interface}
+Au niveau de l'interface graphique, l'application permet d'offrir des contrôles interactifs en plus de donner de une rétroaction à l’utilisateur. En effet, comme il est possible de voir sur les différentes figures présentes dans ce rapport, des panneaux de configuration des différentes instances de formes permettent d'ajuster chacun des paramètres de celles-ci. Lors de la fonction setup, des instances (boutons, panneaux, etc.) dérivant de la classe OfxGui sont ajoutés à la fenêtre de l'application. 
 
 \section{Transformation}
 
@@ -110,7 +148,7 @@ Cela est possible grâce à une structure vector<Obj3D*> qui contient toutes les c
 
 \newpage 
 
-\subsection{Transformation interractive}
+\subsection{Transformation interactive}
 
 Il est possible de modifier interractivement la translation, la rotation et le redimensionnement de tous les objets présents dans la scène.
 
