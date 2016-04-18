@@ -380,21 +380,49 @@ Dans l'application Paint 3D+,  on utilise, pour la partie du projet ''Model 3D''
 \subsection{Propriétés de caméra}
 \subsection{Caméras multiples}
 
+\newpage
 \section{Rastérisation}
-\subsection{Texture d’élévation (height map)}
+
+	\subsection{Texture d’élévation (height map)}
+	Tel que le démontre la figure \ref{fig:f_heightMap}, il est possible d'appliquer une texture d'élévation à partir du logiciel Paint3D+. L'image utilisée pour cette texture est représentée à la figure \ref{fig:f_heightMapSrc}. Un maillage géométrique (\og Mesh \fg{}) est créé en ajoutant des faces à ce dernier. Les faces sont elles-même créées en fonction de quatre sommets définis selon chaque pixel x,y de l'image et de l'indice de luminosité à cet endroit. On procède donc à un surélèvement de l'image selon l'indice de luminosité de chaque pixel. Il est possible de voir une partie de code qui implémente cette fonction à la figure \ref{fig:f_heightMapCode}
+	 
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[scale=0.4]{fig/heightMap.png}
+		\caption{Résultat de texture d’élévation}
+		 \label{fig:f_heightMap}
+	\end{figure}
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[scale=0.95]{fig/heightMapSrc.jpg}
+		\caption{Image source pour la texture d'élévation}
+		 \label{fig:f_heightMapSrc}
+	\end{figure}
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[scale=0.7]{fig/heightMapCode.png}
+		\caption{Code pour la texture d’élévation}
+		 \label{fig:f_heightMapCode}
+	\end{figure}
+
 \subsection{Texture de variation de normale (normal map)}
 \subsection{Cube de réflexion (cube map)}
 
+\newpage
 \section{Courbes et surfaces}
 \subsection{Courbe paramétrique}
 \subsection{Surface paramétrique}
 \subsection{Shader de tesselation}
 
+\newpage
 \section{Lancer de rayon}
 \subsection{Ombrage}
 \subsection{Réfraction}
 \subsection{Rendu graphique}
 
+\newpage
 \section{Techniques de rendu}
 \subsection{Shader de géométrie}
 \subsection{BRDF}
@@ -407,27 +435,27 @@ Voici quelques captures d'écran afin de le démontrer. Toutefois, il est plus fac
  \centering
  \includegraphics[scale=0.4]{fig/AntialisingOff.png}
 	\caption{2D - Anti-crénelage désactivé}
- \label{fig:f_cursor1}
+ \label{fig:f_anti1}
 \end{figure}
 
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.4]{fig/AntialisingOn.png}
 	\caption{2D - Anti-crénelage activé}
- \label{fig:f_cursor1}
+ \label{fig:f_anti2}
 \end{figure}
 
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.6]{fig/AntialisingOff2.png}
 	\caption{3D - Anti-crénelage désactivé}
- \label{fig:f_cursor1}
+ \label{fig:f_anti3}
 \end{figure}
 
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.6]{fig/AntialisingOn2.png}
 	\caption{3D - Anti-crénelage activé}
- \label{fig:f_cursor1}
+ \label{fig:f_anti4}
 \end{figure}
 
