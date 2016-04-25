@@ -341,7 +341,8 @@ Les 2 figures suivantes montrent les 2 primitives 3D que l'application peut crée
 L'application permet de créer une ou des instances de modèles 3D à partir d'un maillage géométrique importé à partir d'un fichier externe.
 \\
 
-Dans le mode ''Model'', l'application permet d'importer un maillage géométrique et d'afficher une instance de modèle3D. Les maillages peuvent être stockés dans les dossiers /bin/data. Pour cette version de l'application, l'utilisateur ne peut qu'activer ou désactiver la lumière, le matériau et la texture (si elle existe). Cemode est à développer dans la prochaine version du projet.
+Dans le mode ''Model'', l'application permet d'importer un maillage géométrique et d'afficher une instance de modèle3D. Les maillages peuvent être stockés dans les dossiers /bin/data. Pour cette version de l'application, l'utilisateur ne peut qu'activer ou désactiver la lumière, le matériau et la texture (si elle existe). Ce mode est à développer dans la prochaine version du projet.
+\newpage
 
 \begin{figure}[h] 
 \begin{center}
@@ -349,13 +350,16 @@ Dans le mode ''Model'', l'application permet d'importer un maillage géométrique 
 \end{center}
 \caption{Exemple de modèle par un fichier externe contenant un maillage.}
 \end{figure}
-
-\begin{figure}[h] 
+             
+\newpage
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=13cm, height=13cm]{fig/gun2.jpg}
 \end{center}
 \caption{Exemple de modèle par un fichier externe contenant un maillage.}
 \end{figure}
+
+\newpage
 \section{Illumination}
 
 
@@ -366,19 +370,133 @@ Le rendu des entités visuelles est fait à partir d'un modèle d'illumination qui 
 
 Dans l'application Paint 3D+,  on utilise, pour la partie du projet ''Model 3D'', la lumière standard (specularlight) et le modèle ''shade'' de OpenGl (GL\_SMOOTH) pour rendre les fichiers modèles en 3D. On peut enlever la lumière et les matériaux des objets avec les touches correspondantes. 
 
+\newpage
+
 \begin{figure}[h] 
 \begin{center}
 \includegraphics[width=13cm, height=13cm]{fig/mod.jpg}
 \end{center}
 \caption{Image représentant comme est traitée et réfléchie la lumière avec l'utilisation du shader ''shade'' de OpenGl (GL\_SMOOTH) }
 \end{figure}
+\newpage
 
 %===========================TP3===============================================================
+
 \newpage
+
 \section{Caméra}
+
+Dans l'application Paint3d+, une caméra interractive peut être activée en appuyant sur le bouton ''Camera'' dans la fenêtre des paramètres 3D. Il faut toutefois être en mode ''3D'' pour pouvoir activer la caméra.
+
 \subsection{Caméra interactive}
+
+En appuyant sur le bouton ''Camera'' en mode 3D, la fenêtre du programme affiche la scène du point de vue de la caméra. Donc, tous les objets de la scène sont transformés pour être rendus du point de vue de la caméra.
+\\
+\\ 
+Au départ, la caméra est initialisée à la position ''(ofGetWidth()/2, ofGetHeight()/2, 1000)''. Cela veut dire que la position par défaut de la caméra est au milieu de l'écran à une distance de 1000 pixels dans l'axe des z de l'espace de la scène. Visuellement, en mode Camera 3D, la scène devient comme celle décrit dans la figure \ref{camerainit}.
+
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/camerainit.png}
+\end{center}
+\caption{Rendu du point de vue la caméra au moment où elle est initialisée. }
+\label{camerainit}
+\end{figure}
+\newpage
+
+Une fois en mode ''Camera'', il est possible d'ajuster l'orientation et la position de la camera avec les touches du clavier décrits dans la figure \ref{cam2}. Grosso modo, ce sont les flèches du clavier et les touches ''w'', ''a'', ''s'', ''d'',''r'', ''f'', '','' et  ''.'' qui permettent respectivement de se déplacer vers l'avant, la gauche, le bas, la droite, le haut et le bas. Les flèches du clavier, quant à elles, changent l'orientation de la vue da la caméra. Il est également possible d'orienter la vue de la caméra avec la souris et son firstButton. Les figures  \ref{cam3} et \ref{cam4} montrent un peu les différentes navigations interractives qu'il est possible de faire avec la caméra et leurs effets sur le rendu final.
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/cam2.png}
+\end{center}
+\caption{Touches à utiliser pour modifier la caméra}
+\label{cam2}
+\end{figure}
+\newpage
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/cam3.png}
+\end{center}
+\caption{Rendu du point de vue de la ccaméra après s'être déplacé.}
+\label{cam3}
+\end{figure}
+\newpage
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/cam4.png}
+\end{center}
+\caption{Rendu du point de vue de la caméra après avoir changé interractivement l'orientation et la position de la caméra}
+\label{cam4}
+\end{figure}
+\newpage
+
 \subsection{Propriétés de caméra}
+
+Avec les paramètres décrits dans la figure \ref{cam5}, il est également possible de changer les paramètres de la caméra tels que le type de projection (orthogonal, projectif), l'angle de champ de vision (horizontal et vertical), le ratio d'aspect et la distance du plan de clipping avant et arrière. 
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/cam5.png}
+\end{center}
+\caption{Description des différents paramètres modifiables sur la caméra.}
+\label{cam5}
+\end{figure}
+\newpage
+
+Les figures qui suivent montrent l'effet de changer les paramètres décrits précédemment.
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/camref.png}
+\end{center}
+\caption{Rendu du point de vue de la caméra après initial avec tous les paramètres mis à leur valeur par défaut}
+\label{camref}
+\end{figure}
+\newpage
+
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/camortho.png}
+\end{center}
+\caption{Rendu du point de vue de la caméra après avoir mis le type de projection à orthogonal}
+\label{camortho}
+\end{figure}
+\newpage
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/camfov.png}
+\end{center}
+\caption{Changement du champ de vision de la caméra (fov)}
+\label{camfov}
+\end{figure}
+\newpage
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/camratio.png}
+\end{center}
+\caption{Rendu du point de vue de la caméra après avoir changé interractivement l'aspect ratio}
+\label{camratio}
+\end{figure}
+
+
 \subsection{Caméras multiples}
+
+To add
 
 \newpage
 \section{Rastérisation}
@@ -436,7 +554,12 @@ Comme on peut le voir sur la figure \ref{fig:f_cubeMap}, une option pour appliqu
 
 \newpage
 \section{Courbes et surfaces}
+
+Dans l'application Paint3D+, il est possible de tracer des courbes ou surfaces paramétriques à l'aide de points de contrôle. Les points de contrôle sont stockés dans une structure vector qui les accumule. Pour ajouter un nouveau point de contrôle, il suffit de créer une sphère (ou un cube), de le placer à la position qu'on veut et d'appuyer sur ''Control Points''. Ainsi, la position de la sphère (ou du cube) est ajoutée au vector contenant les points de contrôle. 
+
 \subsection{Courbe paramétrique}
+
+
 \subsection{Surface paramétrique}
 \subsection{Shader de tesselation}
 
