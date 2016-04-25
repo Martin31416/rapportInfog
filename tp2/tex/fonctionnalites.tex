@@ -406,9 +406,33 @@ Dans l'application Paint 3D+,  on utilise, pour la partie du projet ''Model 3D''
 		\caption{Code pour la texture d’élévation}
 		 \label{fig:f_heightMapCode}
 	\end{figure}
+	
+	De plus, une fonction de displacement mapping a été ajouté pour répliquer le heightmap sur les formes géométriques.
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/displacementMap.png}
+		\caption{Résultat du displacement mapping sur un cube}
+		 \label{fig:f_displacementMap}
+	\end{figure}
 
 \subsection{Texture de variation de normale (normal map)}
 \subsection{Cube de réflexion (cube map)}
+Comme on peut le voir sur la figure \ref{fig:f_cubeMap}, une option pour appliquer une texture cubeMap est disponible. L'image à la figure \ref{fig:f_cubeMapImages} est séparée en 6(haut, bas, gauche, droite, avant, arrière) et est ensuite appliqué à une forme géométrique grâce à un shader.
+
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[scale=0.4]{fig/cubeMapImages.jpg}
+		\caption{Image de base du cubemap}
+		 \label{fig:f_cubeMapImages}
+	\end{figure}
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/cubeMap.png}
+		\caption{Résultat du cube mapping sur une sphère}
+		 \label{fig:f_cubeMap}
+	\end{figure}
 
 \newpage
 \section{Courbes et surfaces}
@@ -425,6 +449,38 @@ Dans l'application Paint 3D+,  on utilise, pour la partie du projet ''Model 3D''
 \newpage
 \section{Techniques de rendu}
 \subsection{Shader de géométrie}
+Des shaders sont utilisés pour rendre les formes affectées par le cube mapping\ref{fig:f_cubeMap} et le displacement mapping\ref{fig:f_displacementMap}. 
+
+Voici les shaders de vertex et de fragments utilisés.
+
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/shaderCV.png}
+		\caption{Shader de vertex du cubemap}
+		 \label{fig:f_shaderCV}
+	\end{figure}
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/shaderCF.png}
+		\caption{Shader de fragment du cubemap}
+		 \label{fig:f_shaderCF}
+	\end{figure}
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/shaderHV.png}
+		\caption{Shader de vertex du displacement map}
+		 \label{fig:f_shaderHV}
+	\end{figure}
+	
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/shaderHF.png}
+		\caption{Shader de fragment du displacement map}
+		 \label{fig:f_shaderHF}
+	\end{figure}
+
 \subsection{BRDF}
 \subsection{Effet visuel en post-process}
 L'interface graphique propose à l'utilisateur une option afin de permettre l'activation ou la désactivation de l'anti-crénelage de l'ensemble de la surface de rendu et des objets qui s'y retrouve. Cela est possible pour n'importe quel mode, que ce soit 2D ou 3D.
