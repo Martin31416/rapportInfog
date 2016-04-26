@@ -384,6 +384,7 @@ Dans l'application Paint 3D+,  on utilise, pour la partie du projet ''Model 3D''
 
 \newpage
 
+
 \section{Caméra}
 
 Dans l'application Paint3d+, une caméra interractive peut être activée en appuyant sur le bouton ''Camera'' dans la fenêtre des paramètres 3D. Il faut toutefois être en mode ''3D'' pour pouvoir activer la caméra.
@@ -496,9 +497,32 @@ Les figures qui suivent montrent l'effet de changer les paramètres décrits précé
 
 \subsection{Caméras multiples}
 
-To add
+Dans l'application Paint3D+, il est possible d'ajouter plus d'une caméra dans une même scène et de changer de camera lorsqu'on est en mode ''Camera'' et qu'il y a plus qu'une caméra dans la scène. Plus précisément, avec le touche clavier ''c'', on crée une nouvelle caméra, avec la touche clavier ''v'', on change de caméra et avec la touche clavier ''b'', on efface la caméra qui est en cours d'utilisation.
+\\
+\\
+Dans les 2 figures suivantes, on montre le texte expliquant à quoi servent les 3 touches décrites ci-haut et on voit aussi la même scène, mais rendue par 2 caméras différentes.
 
 \newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/multiplecambutton.png}
+\end{center}
+\caption{Texte décrivant à quoi servent les touches clavier ''c'', ''v'' et ''b''. On voit aussi une scène 3D composée de 3 cubes selon le point de vue de la caméra 1.}
+\label{mutliplecambutton}
+\end{figure}
+
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/multiplecam2.png}
+\end{center}
+\caption{Rendu du point de vue de la caméra 2 de la scène 3D comportant 3 cubes de la figure précédente}
+\label{multiplecam2}
+\end{figure}
+
+
+
 \section{Rastérisation}
 
 	\subsection{Texture d’élévation (height map)}
@@ -553,15 +577,179 @@ Comme on peut le voir sur la figure \ref{fig:f_cubeMap}, une option pour appliqu
 	\end{figure}
 
 \newpage
+
+
 \section{Courbes et surfaces}
 
 Dans l'application Paint3D+, il est possible de tracer des courbes ou surfaces paramétriques à l'aide de points de contrôle. Les points de contrôle sont stockés dans une structure vector qui les accumule. Pour ajouter un nouveau point de contrôle, il suffit de créer une sphère (ou un cube), de le placer à la position qu'on veut et d'appuyer sur ''Control Points''. Ainsi, la position de la sphère (ou du cube) est ajoutée au vector contenant les points de contrôle. 
 
 \subsection{Courbe paramétrique}
 
+Après avoir accumulé 4 points de contrôle ou plus, il est possible de créer et de rendre une courbe de Bézier Cubique, une courbe Nurbs ou encore une courbe de Catmull-Rom. Pour ce faire, il suffit d'appuyer sur respectivement les boutons, ''Bezier Cubique Curve'', ''Nurbs Curve'' ou ''CatmullRom Curve''.
+\\
+\\ 
+Les figures qui suivent montrent ces courbes construites à partir des points de contrôle (tous supérieurs à 4) représentés par les sphères rouges.
+
+\newpage
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/curvebezier1.png}
+\end{center}
+\caption{5 points de contrôles (ces points de contrôles ont été ajoutés avec le bouton Control Points après avoir sélectionné chacun des sphères) }
+\label{curvebezier1}
+\end{figure}
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/curvebezier2.png}
+\end{center}
+\caption{Courbe de Bézier Cubique rendue à partir des 5 points de contrôle de la figure précédente}
+\label{curvebezier2}
+\end{figure}
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/curvenurbs1.png}
+\end{center}
+\caption{Courbe NURBS rendue à partir des 6 points de contrôle montrés dans la figure}
+\label{curvenurbs1.png}
+\end{figure}
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/curvecatmull1.png}
+\end{center}
+\caption{Courbe de Catmull-Rom rendu à partir des 6 points de contrôle montrés dans la figure}
+\label{curvecatmull1.png}
+\end{figure}
+\newpage
+
+
 
 \subsection{Surface paramétrique}
+
+Dans l'application Paint3D+, il est possible de rendre 2 surfaces paramétriques. Une surface de Bézier Bicubique et une surface de Coons.
+\\
+\\
+Pour créer et rendre une surface de Bézier Bicubique, il suffit d'accumuler un nombre de points de contrôle dont la racine carrée est un nombre entier (1, 4, 9, 16, etc.) et de cliquer sur le bouton ''Bezier Cubique Surface''. De plus, il est important de respecter l'ordre suivant pour les points de contrôle: Ajouter les points rangée par rangée ou colonne par colonne. Exemple: ((1, 1),(2, 1), (3, 1), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)). Si cet ordre n'est pas respecté, la surface risque d'être dégénérée ou invalide.
+\\
+\\
+Pour créer et rendre une surface de Coons, comme décrit dans les notes de cours, il suffit d'identifier 4 courbes en 3D qui forment un contour fermé et le frontière de la surface de Coons. Dans l'application Paint3D+, ce défi a été accompli en choisissant de prendre 12 points de contrôle pour construire une surface de Coons. Voici comment: On place 12 sphères de façon à ce qu'elles forment un contour fermé en 3D. Ensuite, les sphères 1, 2, 3 et4 forment la première courbe du contour fermé., les sphères 4, 5, 6 et 7 forment la 2e courbe du contour fermé, les sphères 7, 8, 9 et 10 forment la 3e courbe du contour fermé et les sphères 10, 11, 12 et 1 forment la 4e courbe du contour fermé. Ensuite, un algorithme s'occupe d'extraire ces 4 courbes et de construire la surface Coons. Il est primordial ici que les 12 sphères soient placées en sens horaire ou anti-horaire et qu'elles se suivent. De la même façon, on doit ajouter les points de contrôle (à partir des sphères ou cubes avec le bouton Control Points) avec ce \textbf{même ordre}. Si l'ordre n'est pas respectée, la surface de Coons, sera, évidemment, dégénérée et invalide.
+\\
+\\
+Les figures qui suivent montrent une surface de Bézier Bicubique et une surface de Coons construites de la façon décrite ci-dessus.
+
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/surfacebezier1.png}
+\end{center}
+\caption{Surface de Bézier Bicubique construite à partir des 9 points de contrôle montrés dans la figure}
+\label{surfacebezier1.png}
+\end{figure}
+\newpage
+
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/surfacecoons1.png}
+\end{center}
+\caption{Surface de Coons construite à partir des 12 points de contrôle formant un contour fermé montrés dans la figure}
+\label{surfacecoons1.png}
+\end{figure}
+\newpage
+
 \subsection{Shader de tesselation}
+
+Dans l'application Paint3D+, il y a un paramètre en mode 3D qui se nomme ''Tesselation''.
+C'est un paramètre dont la valeur est ajustable de $0$ à $100$. Pour la courbe de Bézier Cubique, la courbe NURBS, la courbe de Catmull-Rom et la surface de Bézier Bicubique, le paramètre de tesselation sert à déterminer la largeur du pas utilisé pour incrémenter le paramètre ''t'', (''u'' et ''v'' dans le cas de la surface de Bézier Bicubique) qui varie de $0$ à $1$. En fait, la largeur de pas est déterminée ainsi:
+\[
+largeur\_pas = 1/(floor(Tesselation) +1)
+\]
+
+Ainsi, plus la tesselation est élevée, plus les éléments découpés pour former la courbe paramétrique ou la surface paramétrique seront fins et donc plus la courbe ou la surface sera lisse et fine.
+\\
+\\
+Quant à la surface de Coons, la tesselation sert plutôt à indiquer combien de fois sous-diviser le maillage triangulaire qui recouvre la surface de Coons. Pour des raisons de calculs et de performances, nous avons limité le nombre de sous-divisions à 1 (triangles originaux), 2 et 3 avec la relation suivante:
+\[
+	Si ~tesselation~\epsilon~[0,33[~\Rightarrow nombre\_sous\_division= 1
+	\]
+	\[
+	Si ~tesselation~\epsilon~[33,66[~\Rightarrow nombre\_sous\_division= 2
+	\]
+	\[
+	Si ~tesselation~\epsilon~[66,100[~\Rightarrow nombre\_sous\_division= 3
+\]
+
+Ensuite, la sous-division du maillage triangulaire est fait dans les fonctions ''surfaceTesselation4()'' et ''surfaceTesselation5()'' selon l'algorithme de sous-division de surface de Catmull-Clark décrit dans les notes de cours à la page 137.
+\\
+\\
+Les figures suivantes montrent une courbe de Bézier cubique et une surface de Coons avec différents niveau de tesselation. Pour les autres courbes , c'est le même principe.
+
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/beziertess1.png}
+\end{center}
+\caption{Courbe de Bézier Cubique avec une tesselation de $2.04$}
+\label{beziertess1.png}
+\end{figure}
+\newpage
+
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/beziertess2.png}
+\end{center}
+\caption{Courbe de Bézier Cubique avec une tesselation de $4.08$}
+\label{beziertess2.png}
+\end{figure}
+\newpage
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/beziertess3.png}
+\end{center}
+\caption{Courbe de Bézier Cubique avec une tesselation de $7.14$}
+\label{beziertess3.png}
+\end{figure}
+\newpage
+
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/surfacecoons1.png}
+\end{center}
+\caption{Surface de Coons avec une tesselation de $1$}
+\label{surfacecoons1}
+\end{figure}
+\newpage
+
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/surfacecoons2.png}
+\end{center}
+\caption{Surface de Coons avec une tesselation de $1$}
+\label{surfacecoons2}
+\end{figure}
+\newpage
+
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=13cm, height=13cm]{fig/surfacecoons3.png}
+\end{center}
+\caption{Surface de Coons avec une tesselation de $1$}
+\label{surfacecoons3}
+\end{figure}
+\newpage
 
 \newpage
 \section{Lancer de rayon}
