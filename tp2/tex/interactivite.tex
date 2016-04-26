@@ -41,7 +41,7 @@ Voici un aperçu de l'interface graphique lors de l'ajout de formes 2D.
 \end{figure}
 
 \section{Détails de l'interface graphique}
-L'interface graphique permet de choisir une scène de rendu 2D, 3D ou de modèle selon le choix de l'utilisateur. De plus, il est possible d'importer des images en mode 2D et d'exporter la scène sous forme d'image de format png à l'aide d'un dialogue de d'importation ou d'exporation. Le dernier item de la section Menu permet la sélection des différents objets de la scène 2D.
+L'interface graphique permet de choisir une scène de rendu 2D, 3D ou de modèle selon le choix de l'utilisateur. De plus, il est possible d'importer des images en mode 2D et d'exporter la scène sous forme d'image de format png à l'aide d'un dialogue d'importation ou d'exporation. Les deux derniers items de la section Menu permettent la sélection des différents objets de la scène 2D et l'option d'anti-crénélage.
 
 \bigskip
 \begin{itemize}
@@ -51,6 +51,7 @@ L'interface graphique permet de choisir une scène de rendu 2D, 3D ou de modèle s
 \item \textbf{Import} : Permet l'importation d'une image dans la scène.
 \item \textbf{Export} : Permet l'expotation de la scène de rendu, sans les différents menus, sous forme d'une image de format png.
 \item \textbf{Selection} : Permet la sélection d'un ou de plusieurs objets 2D.
+\item \textbf{Antialising} : Permet de rendre la scène avec ou sans l'option d'anti-crénélage que ce soit au niveau 2D ou 3D.
 \end{itemize}
 
 \subsection{2D Shapes}
@@ -71,12 +72,13 @@ Pour ce qui est du triangle, l'utilisateur doit cliquer en trois points différen
 \item \textbf{Unmerge Shapes} : Permet de détruire l'objet 2D issu d'une fusion de formes. Les primitives vectorielles peuvent donc être manipulées individuellement.
 \end{itemize}
 
-\subsection{2D}
+\subsection{Shapes Parameters}
 
-Cette section de l'interface graphique regroupe les options de lignes de contour et de remplissage.
+Cette section de l'interface graphique regroupe les options de lignes de contour et de remplissage. De plus, il est possible d'afficher une grille en arrière plan.
 
 \bigskip
 \begin{itemize}
+\item \textbf{Grid} : Permet l'affichage d'une grille en arrière plan.
 \item \textbf{Stroke Width} : Permet l'ajustement de la largeur de la ligne de contour entre 1 et 10.
 \item \textbf{Stroke Color} : Permet l'ajustement de la couleur de la ligne de contour sous forme RGBA.
 \item \textbf{Fill Color} : Permet l'ajustement de la couleur de remplissage sous forme RGBA.
@@ -85,25 +87,38 @@ Cette section de l'interface graphique regroupe les options de lignes de contour
 
 \subsection{3D Shapes}
 
-Cette section de l'interface graphique permet de faire l'ajout de formes 3D lorsque le mode 3D est activé.
+Cette section de l'interface graphique permet de faire l'ajout de formes 3D lorsque le mode 3D est activé, en plus de quelques autres options.
 
 \bigskip
 \begin{itemize}
 \item \textbf{Cube} : Permet d'ajouter un cube.
 \item \textbf{Sphere} : Permet d'ajouter une sphère.
+\item \textbf{Camera} : Permet de rentrer en mode caméra.
+
+\item \textbf{Control Points} : Permet d'ajouter des points de contrôle pour la création de courbes et surfaces paramétriques.
+\item \textbf{CatmullRom Curve} : Permet d'ajouter une courbe de CatmullRom.
+\item \textbf{Nurbs Curve} : Permet d'ajouter une courbe de Nurbs.
+\item \textbf{Bezier Cubic Curve} : Permet d'ajouter une courbe de Bezier d'ordre cubique (4 points de contrôle).
+\item \textbf{Bezier Cubic Surface} : Permet d'ajouter une surface courbe de Bezier.
+\item \textbf{Coons Surface} : Permet d'ajouter une surface courbe de Coons.
 \item \textbf{Select next 3D shape} : Permet de parcourir et sélectionner les formes 3D une à une.
 \item \textbf{Unselect} : Permet de désélectionner une objet 3D.
+\item \textbf{Apply Height Map} : Permet d'ajouter une texture d'élévation à l'objet 3D sélectionné.
+\item \textbf{Apply Displacement Map} : Permet d'ajouter une texture de déplacement à l'objet 3D sélectionné.
+\item \textbf{Apply Cube Map} : Permet d'ajouter une texture de réflexion à l'objet 3D sélectionné.
 \end{itemize}
 
-\subsection{3D}
+\subsection{3D Settings}
 
-Cette section de l'interface graphique permet de faire l'ajout de formes 3D lorsque le mode 3D est activé.
+Cette section de l'interface graphique permet de modifier les attributs des objets 3D.
 
 \bigskip
 \begin{itemize}
 \item \textbf{Cloud points} : Permet d'ajouter un cube.
 \item \textbf{Position x/y/z} : Permet de changer la position de l'objet 3D selon l'axe désiré.
 \item \textbf{Rotate x/y/z} : Permet d'effectuer une rotation de l'objet 3D autour de l'axe désiré.
+\item \textbf{Dimension} : Permet d'effectuer un redimensionnement de l'objet 3D.
+\item \textbf{Tesselation} : Permet de choisir le niveau de tesselation.
 \end{itemize}
 
 \section{Utilisation de la souris et racourcis clavier}
@@ -127,6 +142,8 @@ Voici les différentes fonctions de la souris selon les modes.
 
 \subsection{3D}
 
+Lorsqu'on entre en mode 3D l'interface graphique change quelque peu afin d'afficher des nouveaux panneaux de configurations 3D.
+
 \begin{itemize}
 \item \textbf{Touche supprimer} : Permet la suppression de l'objet sélectionné.
 \end{itemize}
@@ -140,4 +157,31 @@ Lorsqu'on entre en mode modèle l'interface graphique change quelque peu afin d'a
 \item \textbf{Touche l} : Permet d'appliquer ou non une lumière.
 \item \textbf{Touche m} : Permet d'appliquer ou non un matériau.
 \item \textbf{Touche t} : Permet d'appliquer ou non une texture.
+\end{itemize}
+
+\subsection{Camera Mode}
+
+Lorsqu'on entre en mode de camera l'interface graphique change quelque peu afin d'afficher les raccourcis clavier à l'écran.
+
+\begin{itemize}
+\item \textbf{Click gauche et déplacement de la souris} : Permet une rotation de l'écran.
+
+\item \textbf{Touche gauche} : Permet d'appliquer une rotation de la caméra vers la gauche.
+\item \textbf{Touche droite} : Permet d'appliquer une rotation de la caméra vers la droite.
+\item \textbf{Touche haut} : Permet d'appliquer une rotation de la caméra vers le haut.
+\item \textbf{Touche bas} : Permet d'appliquer une rotation de la caméra vers le bas.
+
+\item \textbf{Touche w} : Permet d'appliquer un déplacement en profondeur vers l'avant.
+\item \textbf{Touche a} : Permet d'appliquer un déplacement latéral vers la gauche.
+\item \textbf{Touche s} : Permet d'appliquer un déplacement en profondeur vers l'arrière.
+\item \textbf{Touche d} : Permet d'appliquer un déplacement latéral vers la droite.
+
+\item \textbf{Touche r} : Permet d'appliquer un déplacement vers le haut.
+\item \textbf{Touche f} : Permet d'appliquer un déplacement vers le bas.
+
+\item \textbf{Touche o} : Permet d'appliquer une projection orthogonale.
+\item \textbf{Touche p} : Permet d'appliquer une projection en perspective.
+
+\item \textbf{Touche ,} : Permet d'appliquer une rotation anti-horaire de la caméra par rapport au vecteur de direction (roulis anti-horaire).
+\item \textbf{Touche .} : Permet d'appliquer une rotation horaire de la caméra par rapport au vecteur de direction (roulis horaire).
 \end{itemize}
