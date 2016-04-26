@@ -584,8 +584,19 @@ L'ombrage dans notre application est implémenté dans le mode modèle. Ici est mis
 	\end{figure}
 
 \newpage
-\subsection{Réfraction}
 \subsection{Rendu graphique}
+
+Un algorithme de lancer de rayon a été utilisé pour projeter l?ombre des objets qui se trouve en face de la source de lumière. On a utilisé la version plus minimaliste de raytracing. Les rayons sont lancés à partir de la source de lumière dans la direction de chaque pixel de la fenêtre d?affichage. L?illumination locale s?évalue au point d?intersection entre la lumière et la surface. On voit dans la figure plus bas que si on positionne le modèle entre la lumière et la sphère la deuxième est affecter par l?ombrage (ce qui était attendu) :
+
+	\begin{figure}[H]
+ 		\centering
+	 	\includegraphics[width=13cm, height=13cm]{fig/ombrage3.PNG}
+		\caption{Ombrage dans le mode model}
+		 \label{fig:f_ombrage}
+	\end{figure}
+
+\newpage
+\subsection{Réfraction}
 
 \newpage
 \section{Techniques de rendu}
