@@ -8,7 +8,7 @@
 
 \section{Aperçus de l'interface graphique}
 
-Voici quelques aperçus de l'interface graphique aux figures \ref{fig:f_gui}, \ref{fig:f_gui2d}, \ref{fig:f_gui3d}, \ref{fig:f_guiModel}.
+Voici quelques aperçus de l'interface graphique aux figures \ref{fig:f_gui}, \ref{fig:f_gui2d}, \ref{fig:f_gui3d}, \ref{fig:f_guiModel} et \ref{fig:f_guicamera}.
 
 \begin{figure}[H]
  \centering
@@ -38,6 +38,13 @@ Voici un aperçu de l'interface graphique lors de l'ajout de formes 2D.
  \includegraphics[scale=0.6]{fig/GUI_model.png}
 	\caption{Interface graphique en mode modèle}
  \label{fig:f_guiModel}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.6]{fig/GUI_camera.png}
+	\caption{Interface graphique en mode camera}
+ \label{fig:f_guicamera}
 \end{figure}
 
 \section{Détails de l'interface graphique}
@@ -121,6 +128,18 @@ Cette section de l'interface graphique permet de modifier les attributs des obje
 \item \textbf{Tesselation} : Permet de choisir le niveau de tesselation.
 \end{itemize}
 
+\subsection{3D Settings}
+
+Cette section de l'interface graphique permet de modifier quelques paramètres de caméra.
+
+\bigskip
+\begin{itemize}
+\item \textbf{Camera FOV} : Permet de modifier le champ de vision.
+\item \textbf{Aspect Ratio} : Permet de modifier le ratio d'aspect.
+\item \textbf{Near Clip Distance} : Permet de modifier la distance du plan de clipping avant.
+\item \textbf{Far Clip Distance} : Permet de modifier la distance du plan de clipping arrière.
+\end{itemize}
+
 \section{Utilisation de la souris et racourcis clavier}
 
 Lorsque l'utilisateur sélectionne l'une ou l'autre des primitives verctorielles, le curseur change de forme afin de permettre à ce dernier de visualiser dans quel mode il se situe. Pour la sélection il s'agit d'un curseur normal, tandis que pour les différentes formes, le curseur prend l'apparence de la forme sélectionnée. Lorsque la souris se retrouve au dessus des différents panneaux de configuration le curseur reprend sa forme normale.
@@ -184,4 +203,8 @@ Lorsqu'on entre en mode de camera l'interface graphique change quelque peu afin 
 
 \item \textbf{Touche ,} : Permet d'appliquer une rotation anti-horaire de la caméra par rapport au vecteur de direction (roulis anti-horaire).
 \item \textbf{Touche .} : Permet d'appliquer une rotation horaire de la caméra par rapport au vecteur de direction (roulis horaire).
+
+\item \textbf{Touche c} : Permet d'ajouter une nouvelle caméra.
+\item \textbf{Touche v} : Permet de changer de caméra.
+\item \textbf{Touche b} : Permet de supprimer la caméra sélectionnée.
 \end{itemize}
